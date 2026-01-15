@@ -1,5 +1,4 @@
 import adapter from '@sveltejs/adapter-vercel';
-import adapter from '@sveltejs/adapter-node';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -13,8 +12,7 @@ const config = {
 			// if you want to use 'split' mode, set this to 'split'
 			// and create a _redirects file with the redirects you want
 			// see "split" mode in https://github.com/sveltejs/kit/tree/main/packages/adapter-netlify
-			edge: false,
-			split: false
+			runtime: 'nodejs22.x'
 		}),
 		csrf: {
 			checkOrigin: false
